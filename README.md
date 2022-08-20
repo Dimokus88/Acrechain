@@ -202,11 +202,8 @@ wget -O /root/$folder/config/priv_validator_key.json "ССЫЛКА_НА_ВАШ_�
 acred tx staking create-validator --amount="1000000$denom" --pubkey=$($binary tendermint show-validator) --moniker="$MONIKER"	--chain-id="$chain"	--commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1000000" --gas="auto"	--from=<ADDRESS> --fees="555$denom" -y
 ```
 
-Проверьте созданного валидатора заменив <MONIKER> именем вашего валидатора(или посмотрите в [Explorer сети](https://explorer.nodestake.top/acre-testnet/staking)):
+Проверьте созданного валидатора  в [Explorer сети](https://explorer.nodestake.top/acre-testnet/staking).
 
-```
-acred q staking validators -o json | jq .validators[].description.moniker | grep <MONIKER>
-```
 
 * Делегируйте на себя оставшиеся токены, предварительно уточнив оставшийся баланс (оставьте 1 000 000 uacre для оплаты газа транзакций):
 
