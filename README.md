@@ -96,8 +96,10 @@ nano /root/$folder/config/priv_validator_key.json
 2. **Or download your file priv_validator_key.json:**
 
 ```
+sv stop acred
 rm /root/$folder/config/priv_validator_key.json 
 wget -O /root/$folder/config/priv_validator_key.json "LINK_YOR_FILE"
+sv start acred
 ```
   
 * The command to create a validator looks like this (with automatic delegation 1 acre) :
