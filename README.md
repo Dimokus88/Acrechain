@@ -105,7 +105,7 @@ sv start acred
 * The command to create a validator looks like this (with automatic delegation 1 acre) :
 
 ```
-acred tx staking create-validator --amount="1000000$denom" --pubkey=$($binary tendermint show-validator) --moniker="$MONIKER" --chain-id="$chain" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1000000" --gas="auto" --from=<ADDRESS> --fees="555$denom" -y
+acred tx staking create-validator --amount="1000000$denom" --pubkey=$($binary tendermint show-validator) --moniker="$MONIKER" --chain-id="$chain" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1000000" --gas="auto" --from=<ADDRESS> --fees="600$denom" -y
 ```
 
 Check the created validator in [explorer](https://explorer.nodestake.top/acre-testnet/staking).
@@ -203,7 +203,7 @@ sv start acred
 * Команда создания валидатора выглядит так(с автоматическим делегированием 1 acre) :
 
 ```
-acred tx staking create-validator --amount="1000000$denom" --pubkey=$($binary tendermint show-validator) --moniker="$MONIKER"	--chain-id="$chain"	--commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1000000" --gas="auto"	--from=<ADDRESS> --fees="555$denom" -y
+acred tx staking create-validator --amount="1000000$denom" --pubkey=$($binary tendermint show-validator) --moniker="$MONIKER"	--chain-id="$chain"	--commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1000000" --gas="auto"	--from=<ADDRESS> --fees="600$denom" -y
 ```
 
 Проверьте созданного валидатора  в [Explorer сети](https://explorer.nodestake.top/acre-testnet/staking).
