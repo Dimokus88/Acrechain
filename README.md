@@ -194,9 +194,11 @@ nano /root/$folder/config/priv_validator_key.json
 2. **Или загрузите свой файл priv_validator_key.json:**
 
 ```
+sv stop acred
 rm /root/$folder/config/priv_validator_key.json 
-wget -O /root/$folder/config/priv_validator_key.json "ССЫЛКА_НА_ВАШ_ФАЙЛ"
-``` 
+wget -O /root/$folder/config/priv_validator_key.json "LINK_YOR_FILE"
+sv start acred
+```
   
 * Команда создания валидатора выглядит так(с автоматическим делегированием 1 acre) :
 
