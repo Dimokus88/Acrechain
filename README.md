@@ -98,7 +98,7 @@ Thus, you will get a link to a direct download of the file:
 
 <div align="center">
 
-![image](https://user-images.githubusercontent.com/23629420/179024693-347b5956-c04e-4d8c-b318-523b4d9ba522.png)
+![image](https://user-images.githubusercontent.com/23629420/186133827-e8abc453-b65a-408b-bed7-6f73d28c32bf.png)
   
 </div>
 
@@ -147,7 +147,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/179024664-e6eca9cc-8963-4109-96e6-3b65c1c6fd52.png)
+![image](https://user-images.githubusercontent.com/23629420/186133874-5d5afae4-8684-41f9-868e-60f625e4be0e.png)
 
 </div>
 
@@ -221,7 +221,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/179024634-7f34e21d-089b-438a-974b-b670ad667cf8.png)
+![image](https://user-images.githubusercontent.com/23629420/186133921-78362701-50ae-4310-bd9b-150c40cc56d0.png)
 
 </div>
 
@@ -273,7 +273,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-  ![image](https://user-images.githubusercontent.com/23629420/179024602-86d039cc-8015-45ed-8314-857e0fdd7183.png)
+![image](https://user-images.githubusercontent.com/23629420/186133958-d29ee91e-6dd7-4549-b53b-62820e295331.png)
 
 </div>
 
