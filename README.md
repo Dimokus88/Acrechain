@@ -20,6 +20,7 @@ Before you start - subscribe to our news channels:
 
 </div>
 
+
 <div align="center">
   
 | [Discord Acrechain](https://www.discord.gg/arable) | [Twitter Acrechain](https://twitter.com/ArableProtocol) | [Site Acrechain](https://arable.finance/) | [GitHub Acrechain](https://github.com/ArableProtocol) | [Telegram Acrechain](https://t.me/acrechain) |
@@ -32,6 +33,8 @@ Before you start - subscribe to our news channels:
 [English version](https://github.com/Dimokus88/Acrechain/tree/main#english-version) | [Русская версия](https://github.com/Dimokus88/Acrechain/tree/main#%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F) 
  
 </div>
+
+___
 
 # English version
 
