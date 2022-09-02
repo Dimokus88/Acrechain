@@ -6,16 +6,13 @@ services:
     image: dimokus88/ubuntu:1.1
     env:
 #1.Раздел часной информации, неделитесь даннмы из этого раздела!
-#1.Private information section, do not share data from this section!Раздел часной информации, неделитесь даннмы из этого раздела!
-     - "my_root_password=" # пароль root для подключения по ssh
-     - "MONIKER=Name_Akash" #Node name (Extra tokens ACRE to write "Akash" in moniker, example: Dimokus_Akash). Имя ноды (Дополнительный токены ACRE за "Akash" в моникере, например:DimokusAkash).
-     - "MNEMONIC=" # seed фраза от тестового кошелька
-     - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
+#1.Private information section, do not share data from this section!
+      - "my_root_password=" # Root password far a ssh connection. Пароль root для подключения по ssh.
+      - "MONIKER=" # Node name.Имя ноды.
+      - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #==================================================================
 #2.Раздел переменных для работы ноды
-#2.Section of variables for node operation   
-     - "validator_node=yes"
-     - "autodelegate=no"
+#2.Section of variables for node operation"
      - "binary=acred"
      - "vers=testnet_bamboo"
      - "genesis=https://raw.githubusercontent.com/ArableProtocol/acrechain/testnet_bamboo/networks/bamboo/genesis.json"
@@ -31,7 +28,7 @@ services:
       - "bash"
       - "-c"
     args:
-      - 'curl -s https://raw.githubusercontent.com/Dimokus88/universe/main/alphatest/node.sh | bash '
+      - 'curl -s https://raw.githubusercontent.com/Dimokus88/universe/main/main.sh | bash '
     expose:
       - port: 80
         as: 80
