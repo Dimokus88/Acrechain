@@ -63,7 +63,7 @@ Connect to the running node via **SSH** using forwarded port **22**, user **root
   
 <p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032966-3fa2ffae-5348-4a2c-a4e8-5d33c57ba320.png" width=60% </p>
 
-Check sync status, if `false` means the node is **synced*
+Check sync status, if `false` means the node is **synced**
   
 ```
 curl -s localhost:26657/status | jq .result.sync_info.catching_up
