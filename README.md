@@ -37,252 +37,132 @@ Before you start - subscribe to our news channels:
 ___
 
 # English version
+### Deployment of the Acrechain node.
 
-> If you want to migrate your Acrechain node to Akash, or if you have priv_validator_key.json, then go [to this step](https://github.com/Dimokus88/Acrechain#if-you-have-priv_validator_keyjson).
+Deploy [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml) **Acrechain** nodes with **Cloudmos (Akashlytics)** ( [use instructions here](https://github.com/Dimokus88/guides/blob/main/Akashlytics/EN-guide.md) ) by setting the values ​​in the corresponding `deploy.yml` variables:
+- **my_root_password** - your password for the `root` user.
+- **MONIKER**-node name.
+- **LINK_KEY**-link to direct download of `priv_validator_key.json`* file.
 
->You must have more than ***5 AKT*** on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community[Akash RU](https://t.me/akash_ru) we regularly hold events in which we distribute АКТ.
+If you don't have a `priv_validator_key.json` or want to know how to get a direct download link, refer to [this guide](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/valkey/README_EN.md).
 
-## If starting for the first time:
+> *If you want to deploy an **RPC** node without a validator key, leave `LINK_KEY` blank or remove this line altogether. The node will run on the generated `priv_validator_key.json`.
 
-***Create an additional Cosmos ecosystem wallet for the Acrechain project using Keplr or Cosmostation. Rewrite the seed phrase from the created wallet, we will need it when deploying.***
-
-* Open ***Akashlytics***,if you don't have it installed, then [link for download](https://www.akashlytics.com/deploy).
-
-* We check the presence of a balance  ***(>5АКТ)*** and the presence of an installed certificate.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Click ***CREATE DEPLOYMENT***. Select ***Empty*** and copy the contents there [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml)
-
-* Let's take a look at what is there, so the ```services``` section indicates the ```docker``` node image, as well as a block with environment variables ```env```:
-
-* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
-* ```MONIKER```       - Node name .
-* ```MNEMONIС```      -  insert the mnemonic phrase from your wallet ***Acrechain***.
-
-> ```LINK_KEY``` -  comment out the env to the priv_validator_key.json. 
-
-In the ```resources``` field, we set the capacity to be rented. ```2 CPU x 3 GB RAM x 40 GB SSD```  for ***Acrechain*** node. 
-
-* Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-
-* We choose the one that suits us in terms of price and equipment. Then we press ```ACCEPT BID```.
-
-We are waiting for the completion of the deployment.
-
-* In the ```LOGS``` tab, wait for a message about the generated file ```priv_validator_key.json``` .
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/174469531-856760fd-3bda-4373-8b13-358c777ee51e.png)
-
-</div>
-
-* In the ```SHELL``` tab, run the command```cat /root/.acred/config/priv_validator_key.json```, save the answer in a file```priv_validator_key``` with extension```.json```.
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/174469563-81a843e6-ed13-4221-99dd-516f5a3a8d4a.png)
-
-</div>
-
-> Then open access to the file on google drive and copy its link, it will look like:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.  
-Thus, you will get a link to a direct download of the file:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
-
-* Go to the ```UPDATE``` tab, uncomment the ***LINK_KEY*** line (remove the # symbol) and paste the link to directly download your ```priv_validator_key.json``` file. Then click ```UPDATE DEPLOYMENT```. Confirm the transaction.
-
-*In the process of work, your address ***Acrechain*** will be displayed, you need to request tokens to it in [Discord Acrechain](https://www.discord.gg/arable) .
+At this stage, the node is deployed. Navigating to the forwarded port **26657** in the `LEASES` tab, the `websocket` of the node will open, where its up-to-date information will be available. If you need to **create** a validator on your `priv_validator_key.json` go to the next step.
 
 <div align="center">
 
-![image](https://user-images.githubusercontent.com/23629420/186133827-e8abc453-b65a-408b-bed7-6f73d28c32bf.png)
-  
-</div>
-
-* In the ```LOGS``` tab , you can view the operation of the node. After full synchronization, a validator will be created (***if it has not been created earlier***) and the node will enter the automatic mode of operation.
-
-[Go to start](https://github.com/Dimokus88/Acrechain#Acrechain-validator-node-on-akash-network)
-
-### Thank you for choosing Akash Network!
-
-## If you have priv_validator_key.json
-
-> Then open access to the file on google drive and copy its link, it will look like:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.  
-Thus, you will get a link to a direct download of the file:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
-
-* Open ***Akashlytics***,if you don't have it installed, then [link for download](https://www.akashlytics.com/deploy).
-
-* We check the presence of a balance  ***(>5АКТ)*** and the presence of an installed certificate.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Click ***CREATE DEPLOYMENT***. Select ***Empty*** and copy the contents there [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml)
-
-* Let's take a look at what is there, so the ```services``` section indicates the ```docker``` node image, as well as a block with environment variables ```env```:
-
-* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
-* ```MONIKER```       - Node name .
-* ```MNEMONIС```      -  insert the mnemonic phrase from your wallet ***Acrechain***.
-* ```LINK_KEY``` -  paste the link to the hosted priv_validator_key.json (direct download).
-
-In the ```resources``` field, we set the capacity to be rented. ```2 CPU x 3 GB RAM x 40 GB SSD``` recommended for ***Acrechain*** node. 
-
-* Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* We choose the one that suits us in terms of price and equipment. Then we press ```ACCEPT BID```.
-
-We are waiting for the completion of the deployment.
-
-* In the ```LOGS```  tab , you can view the operation of the node. After full synchronization, a validator will be created (***if it has not been created earlier***) and the node will enter the automatic mode of operation. 
-
-* In the process of work, your address ***Acrechain*** will be displayed, you need to request tokens to it in [Discord Acrechain](https://www.discord.gg/arable) .
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/186133874-5d5afae4-8684-41f9-868e-60f625e4be0e.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032797-70a74454-75dd-4910-8a30-9a88a1715531.png" width=45% align="left"</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032818-069eef95-8242-459f-b503-ad8322261482.png" width=45% </p>
 
 </div>
 
-[Go to start](https://github.com/Dimokus88/Acrechain#Acrechain-validator-node-on-akash-network)
+### Creating an Acrechain validator
 
-### Thank you for choosing Akash Network!
-
-# Русская версия
-
-> Если хотите перенести вашу ноду на Akash, или у вас есть priv_validator_key.json, то перейдите [к этому пункту](https://github.com/Dimokus88/Acrechain#%D0%B5%D1%81%D0%BB%D0%B8-%D1%83-%D0%B2%D0%B0%D1%81-%D0%B5%D1%81%D1%82%D1%8C-priv_validator_keyjson).
-
-> На вашем кошельке ```Akash``` (с которого будет разворачивать ***Acrechain***) должно быть более ***5 АКТ*** (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах ```Gate```, ```AsendeX```, ```Osmosis``` . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
-
-## Если запуск производится впервые:
-
-***Создайте дополнительный кошелек экосистемы Cosmos для проекта Acrechain, с помощью Keplr или Cosmostation. Перепишите seed фразу от созданного кошелька, она понадобится нам при развертке.***
-
-* Открываем ```Akashlytics```, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
-
-* Проверяем наличие баланса (>5АКТ) и наличие установленного сертификата.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Нажимаем ```CREATE DEPLOYMENT```. Выбираем ```Empty```(пустой template) и копируем туда содержимое [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml) .
-
-Раберем что там есть, итак раздел ```services``` здесь указывается ```docker``` образ ноды, а также блок с переменными окружения ```env```:
-
-В поле ***my_root_password*** - задаем пароль root для подключения по ssh.
-
-В поле ***MONIKER*** - задаем имя ноды.
-
-В поле ***MNEMONIС*** - вставляем мнемоник фразу от вашего кошелька ***Acrechain***.
-
-> Поле ***LINK_KEY*** -  оставьте закомментированным ссылка на размещенный priv_validator_key.json (прямое скачивание).
-
-Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды ***Acrechain*** рекомендуется ```2 CPU x 3 GB RAM x 40 GB SSD```.  
-
-Нажимаем кнопку ```CREATE DEPLOYMENT``` и ждем появления провайдеров, со свободными мощностями (***BIDS***).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* Выбираем подходящий для нас по цене и оборудованию. После чего нажимаем ```ACCEPT BID```.
-
-Ждем заверщения развертывания.
-
-* Во вкладке ```LOGS``` дождитесь сообщения о сгенерированном файле ```priv_validator_key.json``` .
-
-<div align="center">
+Connect to the running node via **SSH** using forwarded port **22**, user **root** and the password you set in **deploy.yml**:
   
-![image](https://user-images.githubusercontent.com/23629420/174469544-3c25b9ff-2ee8-49db-92e9-5e101d4c0be9.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032966-3fa2ffae-5348-4a2c-a4e8-5d33c57ba320.png" width=60% </p>
+
+Check sync status, if `false` means the node is **synced*
   
-</div>
+```
+curl -s localhost:26657/status | jq .result.sync_info.catching_up
+```
 
-* Во вкладке ```SHELL``` выполните команду ```cat /root/.acred/config/priv_validator_key.json```, ответ сохраните в файле ```priv_validator_key``` с расширением ```.json```.
+If the node is **synchronized** - run:
 
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/174469553-e9a9a129-c17d-4cc6-b09a-a0cba0104634.png)
-  
-</div>
+```
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+```
 
-> Откройте доступ к файлу на ```google``` диск и скопируйте его ссылку, она будет вида:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs``
- вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```.  
-Таким образом, у вас получится ссылка на прямое скачивание файла:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` . Сохраните ее.
+Follow the script execution prompts.
 
-* Перейдите во вкладку ```UPDATE```, расскаментируйте строку  ***LINK_KEY*** (удалив символ #) и вставьте ссылку на прямое скачивание вашего файла ```priv_validator_key.json```. После чего нажмите ```UPDATE DEPLOYMENT```. Подтвердите транзакцию.
+When the validator is created, request the remaining balance:
 
-* В процессе работы будет выводится ваш адрес ***Acrechain***, на него нужно запросить токены в [Discord Acrechain](https://www.discord.gg/arable) .
+```
+$binary q bank balances $address
+```
 
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/186133921-78362701-50ae-4310-bd9b-150c40cc56d0.png)
+You can delegate the remaining tokens to yourself, but leave 1,000,000 uacre to pay for transaction gas:
 
-</div>
+```
+$binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
+```
 
-* В поле ```LOGS``` можете наблюдать работу ноды. После полной синхронизации будет создан валидатор (если он не был созда ранее) и нода войдет в автоматический режим работы. 
+Collect rewards:
 
-[Перейти к началу](https://github.com/Dimokus88/Acrechain#Acrechain-validator-node-on-akash-network)
+```
+$binary tx distribution withdraw-rewards $valoper --from $address --fees 500$denom --commission --chain-id $chain -y
+```
+Other commands for managing a node [can be found here](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
 
-### Спасибо что используете Akash Network!
+[Back to top](https://github.com/Dimokus88/Acrechain/blob/main/README.md#Acrechain-validator-node-on-akash-network)
 
-## Если у вас есть priv_validator_key.json
-
-> Откройте доступ к файлу на google диск и скопируйте его ссылку, она будет вида:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```.  
-Таким образом, у вас получится ссылка на прямое скачивание файла:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` . Сохраните ее.
-
-* Открываем ```Akashlytics```, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
-
-* Проверяем наличие баланса (>5АКТ) и наличие установленного сертификата.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Нажимаем ```CREATE DEPLOYMENT```. Выбираем ```Empty```(пустой template) и копируем туда содержимое [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml) .
-
-Давайте раберем что там есть, итак раздел ```services``` здесь указывается ```docker``` образ ноды, а также блок с переменными окружения ```env```:
-
-В поле ***my_root_password*** - задаем пароль root для подключения по ssh.
-
-В поле ***MONIKER*** - указываем имя ноды.
-
-В поле ***MNEMONIС*** - вставляем мнемоник фразу от вашего кошелька ***Acrechain***.
-
-В поле ***LINK_KEY*** -  скопируйте ссылку на размещенный priv_validator_key.json (прямое скачивание). 
-
-Ниже, в поле ```resources``` мы выставляем арендуемую мощность. для ноды ***Acrechain*** рекомендуется ```2 CPU x 3 GB RAM x 40 GB SSD```.
-
-Нажимаем кнопку ```CREATE DEPLOYMENT``` и ждем появления провайдеров, со свободными мощностями (***BIDS***).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* Выбираем подходящий для нас по цене и оборудованию. После чего нажимаем ```ACCEPT BID```.
-
-Ждем заверщения развертывания.
-
-* В вкладке ```LOGS``` можете наблюдать работу ноды.  После чего будет создан валидатор (если он не был созда ранее) и нода войдет в автоматический режим работы.
-
-* В процессе работы будет выводится ваш адрес ***Acrechain***, на него нужно запросить токены в [Discord Acrechain](https://www.discord.gg/arable) . 
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/186133958-d29ee91e-6dd7-4549-b53b-62820e295331.png)
-
-</div>
-
-[Перейти к началу](https://github.com/Dimokus88/Acrechain#Acrechain-validator-node-on-akash-network)
-
-
-### Спасибо что используете Akash Network!
+**Thank you for using Akash Network!**
 
 ___
+# Русская версия
+### Развертка ноды Acrechain.
+
+Разверните [deploy.yml](https://github.com/Dimokus88/Acrechain/blob/main/deploy.yml) ноды **Acrechain** с помощью **Cloudmos (Akashlytics)**  ([инструкция по использованию здесь](https://github.com/Dimokus88/guides/blob/main/Akashlytics/RU-guide.md)) установив значения в соответствующих переменных  `deploy.yml`: 
+- **my_root_password**-свой пароль для `root` пользователя
+- **MONIKER**-имя ноды  
+- **LINK_KEY**-ссылку на прямое скачивание файла `priv_validator_key.json`* 
+
+Если у вас нет `priv_validator_key.json` или вы хотите знать, как получить ссылку на прямое скачивание - обратитесь [к этой инструкции](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/valkey/README_RU.md). 
+
+> *Если вы хотите развернуть **RPC** ноду без ключа валидатора - оставьте `LINK_KEY` пустым или вовсе удалите эту строку. Нода запустится на сгенерированном `priv_validator_key.json`. 
+
+На данном этапе нода развернута . Перейдя на переадресованный порт **26657** во вкладке `LEASES` откроется `websocket` ноды, где будет доступна ее актуальная информация. Если вам нужно **создать** валидатора на вашем `priv_validator_key.json` перейдите к следующему пункту.
+
+<div align="center">
+
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032797-70a74454-75dd-4910-8a30-9a88a1715531.png" width=45% align="left"</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032818-069eef95-8242-459f-b503-ad8322261482.png" width=45% </p>
+
+</div>
+
+### Создание валидатора Acrechain
+
+Подключитесь к работающей ноде по протоколу **SSH**, используя переадресованный **22** порт, пользователь **root** и пароль заданный вами в **deploy.yml**:
+  
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032966-3fa2ffae-5348-4a2c-a4e8-5d33c57ba320.png" width=60% </p>
+  
+Проверьте статус синхронизации, если `false` значит нода **синхронизированна*
+  
+```
+curl -s localhost:26657/status | jq .result.sync_info.catching_up
+```
+
+Если нода **синхронизированна** - выполните:
+
+```
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+```
+
+Следуйте подсказкам выполнения скрипта.
+
+Когда валидатор будет создан запросите оставшийся баланс:
+
+```
+$binary q bank balances $address
+```
+
+Можете делегировать на себя оставшиеся токены, но оставьте 1 000 000 uacre для оплаты газа транзакций:
+
+```
+$binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
+```
+
+* Собрать награды:
+
+```
+$binary tx distribution withdraw-rewards $valoper --from $address --fees 500$denom --commission --chain-id $chain -y
+```
+Другие команды по управлению нодой [можете найти здесь](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
+
+[К началу](https://github.com/Dimokus88/Acrechain/blob/main/README.md#Acrechain-validator-node-on-akash-network)
+
+**Спасибо что воспользовались Akash Network!**
+___
+
