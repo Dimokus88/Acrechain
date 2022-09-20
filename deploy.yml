@@ -23,7 +23,7 @@ services:
      - "gitfold=acrechain"
      - "SHIFT=4000"
      - "link_peer=https://raw.githubusercontent.com/Dimokus88/Acrechain/main/PEER"
-     - "SNAP_RPC=http://49.12.236.218:46657"  
+     - "SNAP_RPC=https://rpc-t.acre.nodestake.top:443"  
     command:
       - "bash"
       - "-c"
