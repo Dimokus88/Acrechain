@@ -8,19 +8,20 @@ services:
 #1.Раздел часной информации, неделитесь даннмы из этого раздела!
 #1.Private information section, do not share data from this section!
       - "MY_ROOT_PASSWORD=" # Root password far a ssh connection. Пароль root для подключения по ssh.
-      - "MONIKER=" # Node name. Use "Akash" in moniker(for example:Dimokus_Akash) to help develop the project! Имя ноды. Используйте в моникере "Akash"(например:Dimokus_Akash) что бы помочь в развитии проекта!
+      - "MONIKER=Akash" # Node name.Имя ноды.
       - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #==================================================================
 #2.Раздел переменных для работы ноды
-#2.Section of variables for node operation"
+#2.Section of variables for node operation 
       - "GITHUB_REPOSITORY=https://github.com/ArableProtocol/acrechain.git"
       - "SNAP_RPC=https://rpc-t.acre.nodestake.top:443"  
       - "TOKEN="
+
     command:
       - "bash"
       - "-c"
     args:
-      - 'curl -s https://raw.githubusercontent.com/Dimokus88/universe/main/main.sh | bash '
+      - 'curl -s  https://raw.githubusercontent.com/Dimokus88/universe/main/node.sh | bash '
     expose:
       - port: 80
         as: 80
@@ -38,7 +39,6 @@ services:
         as: 26657
         to:
           - global: true
-        
 profiles:
   compute:
     app:
@@ -52,7 +52,7 @@ profiles:
         
         
   placement:
-    akash: 
+    akash:       
       pricing:
         app:
           denom: uakt
@@ -62,3 +62,4 @@ deployment:
     akash:
       profile: app
       count: 1 
+     
